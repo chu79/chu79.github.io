@@ -1,0 +1,244 @@
+body{
+    background-color: #1c2026;
+    background-image:radial-gradient(circle 300px at 75% 800px, #434857, rgba(0, 128, 0, 0));
+}
+
+ /*-- Header --*/
+body {
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+}
+
+header a { 
+    color: #ffffff;
+    text-decoration: none;
+}
+header a:focus, a:hover { 
+    color: #a7a7a7; 
+}
+
+header a:active { 
+    color: #b8b8b8; 
+}
+
+
+/*-- Nav Bar --*/
+
+header{
+    display: flex; 
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    position: relative;
+    z-index: 2;   
+}
+
+
+/*logo*/
+
+.logo {
+    float:left;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav > li {
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 0.9rem;
+}
+
+.nav > li:last-child{
+    padding-right: 10px;
+}
+
+.hover-underline-animation {
+    position: relative;
+    color:  white;
+    text-decoration: none;
+}
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: -3px;
+    left: 0;
+    background-color: #f0bc1f;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.language{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.header-divider{
+    position: absolute;
+    border-top: 1.5px solid white;
+    width: 50%;
+    z-index: 2;
+    right: 0px;
+    top: 25px;
+    opacity: 0.3;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    #sider {
+        position: fixed;
+        display: block;
+        width: 100%;
+        opacity: 0;
+        background-color: #d3d3d33f;
+        left: 0px;
+        top: 39px;
+        transition: height 0.25s, opacity 0.25s;
+    }
+        
+    #sider.active {
+       opacity: 1;
+       height: 183px;
+    }
+
+    .nav li:hover {
+        background-color: #f0bc1f;
+        transition: ease-in-out;    
+    }
+    
+    .nav li a:hover {
+        color: #000000;  
+    }
+    
+    .nav > li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding:8px 0px;
+    }
+
+    .nav > li:last-child {
+        border-bottom: none;
+    }
+
+    .hover-underline-animation {
+        display: block;
+        position: relative;
+        color:  white;
+        text-decoration: none;
+    }
+    
+    .hover-underline-animation:hover {
+       background-color: #f0bc1f;
+    }
+      
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        display: none;
+    }
+    
+
+    /*--- logo ---*/
+
+    .logo {
+        float:left;
+        display: block;
+        cursor: pointer;
+    }
+
+    /*--- Navigation Burger Menu ---*/
+
+    #toggle-menu {
+        float:right;
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        right: 10px;
+        top: 5px;
+    }
+
+    #toggle-menu .bar {
+        padding: 0;
+        width: 25px;
+        height: 3px;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        border-radius: 3px;
+        transition: all 0.4s ease-in-out;
+        position: absolute;
+    }
+
+    #toggle-menu span.bar1 {
+        top: 0px;
+    }
+
+    #toggle-menu span.bar2, .bar3 {
+        top: 8px;
+    }
+    
+    #toggle-menu span.bar4 {
+        top: 16px;
+    } 
+
+    /*--- Burger Menu Animation---*/
+    
+    #toggle-menu.menu-is-active .bar {
+        padding: 0;
+        width: 25px;
+        height: 3px;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        border-radius: 3px;
+        transition: all 0.4s ease-in-out;
+        position: absolute; 
+    }
+
+    #toggle-menu.menu-is-active span.bar1{
+        top: 0px;
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        transform: translateX(20px);
+        background-color: transparent;
+    }
+
+    #toggle-menu.menu-is-active span.bar4{
+        top: 16px;
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        transform: translateX(-20px);
+        background-color: transparent;
+    }
+
+    #toggle-menu.menu-is-active span.bar2 {
+        top: 8px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #toggle-menu.menu-is-active span.bar3 {
+        top: 8px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
